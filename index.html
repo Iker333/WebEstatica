@@ -1,6 +1,176 @@
-<html>
+<!DOCTYPE html>
+<html lang="ca">
 <head>
-<title>la meva primera web estàtica </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOM - Informàtica</title>
+    <link rel="stylesheet" href="webfinal.css">
 </head>
-<h1> Hola, mon!</h1>
+<body>
+    <div class="logo-title-container">
+        <div class="logo-container">
+            <img src="logoweb.png" alt="Logo TOM" class="logo">
+        </div>
+
+        <nav>
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#services" class="nav-link">Serveis</a>
+            <a href="#organigrama" class="nav-link">Organigrama</a>
+            <a href="#contact" class="nav-link">Contacte</a>
+        </nav>
+
+        <div class="lang-selector">
+            <select onchange="changeLanguage(this)">
+                <option value="ca">Català</option>
+                <option value="es">Español</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </div>
+
+    <section id="home">
+        <div class="container">
+            <h2 class="home-text">Benvinguts a TOM - Informàtica</h2>
+            <p class="home-text">Som una empresa d'informàtica especialitzada en solucions innovadores per a empreses i particulars.</p>
+            <div class="hover-rectangle">
+                <p class="home-text">Descobreix els nostres serveis i contacta'ns per més informació!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="services-text">Serveis</h2>
+            <div class="hover-rectangle">
+                <h3 class="services-text">Serveis de Suport Tècnic</h3>
+                <p class="services-text">Assistència tècnica per a la teva empresa o particulars. Suport en xarxes, sistemes i més.</p>
+            </div>
+            <div class="hover-rectangle">
+                <h3 class="services-text">Desenvolupament de Programari</h3>
+                <p class="services-text">Creem solucions a mida per a les teves necessitats, adaptades al teu negoci.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="organigrama">
+        <div class="container">
+            <h2 class="organigrama-text">Organigrama de l'Empresa</h2>
+            <div class="organigrama">
+
+                <div class="nivell">
+                    <h2><a href="joel.html" class="link-ceos">CEO's</a></h2>
+                    <div class="caixa">Joel<br><a href="joel.html">CEO</a></div>
+                    <div class="caixa">Iker<br><a href="iker.html">CEO</a></div>
+                    <div class="caixa">Alex<br><a href="alex.html">CEO</a></div>
+                </div>
+
+                <div class="nivell">
+                    <div class="caixa">Departament de Tecnologia</div>
+                    <div class="caixa">Departament Comercial</div>
+                    <div class="caixa">Recursos Humans</div>
+                    <div class="caixa">Departament Econòmic</div>
+                </div>
+
+                <div class="nivell">
+                    <div class="caixa">
+                        Marc Vidal<br>Anna Roca<br>Jordi Pons<br>Laura García<br>Carles Martínez<br>Pau Torres
+                    </div>
+                    <div class="caixa">
+                        Raquel López<br>Mireia Serra<br>
+                    </div>
+                    <div class="caixa">
+                        Elisenda Sánchez<br>
+                    </div>
+                    <div class="caixa">
+                        Jordi Hernández<br>Paula Rodríguez<br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="contact-text">Contacta amb nosaltres</h2>
+            <form class="contact-form">
+                <input type="text" id="name" name="name" placeholder="Nom" required>
+                <input type="text" id="surname" name="surname" placeholder="Cognoms" required>
+                <input type="email" id="email" name="email" placeholder="Correu electrònic" required>
+                <input type="tel" id="phone" name="phone" placeholder="Telèfon (opcional)">
+                <textarea id="message" name="message" placeholder="Escriu el teu missatge" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function changeLanguage(select) {
+            const lang = select.value;
+            
+            const translations = {
+                "ca": {
+                    "title": "TOM - Informàtica",
+                    "home": {
+                        "h2": "Benvinguts a TOM - Informàtica",
+                        "p": "Som una empresa d'informàtica especialitzada en solucions innovadores per a empreses i particulars."
+                    },
+                    "services": {
+                        "h2": "Serveis",
+                        "h3": ["Serveis de Suport Tècnic", "Desenvolupament de Programari"],
+                        "p": ["Assistència tècnica per a la teva empresa o particulars. Suport en xarxes, sistemes i més.",
+                              "Creem solucions a mida per a les teves necessitats, adaptades al teu negoci."]
+                    },
+                    "organigrama": "Organigrama de l'Empresa",
+                    "contact": "Contacta amb nosaltres"
+                },
+                "es": {
+                    "title": "TOM - Informática",
+                    "home": {
+                        "h2": "Bienvenidos a TOM - Informática",
+                        "p": "Somos una empresa de informática especializada en soluciones innovadoras para empresas y particulares."
+                    },
+                    "services": {
+                        "h2": "Servicios",
+                        "h3": ["Servicios de Soporte Técnico", "Desarrollo de Software"],
+                        "p": ["Asistencia técnica para tu empresa o particulares. Soporte en redes, sistemas y más.",
+                              "Creamos soluciones a medida para tus necesidades, adaptadas a tu negocio."]
+                    },
+                    "organigrama": "Organigrama de la Empresa",
+                    "contact": "Contáctanos"
+                },
+                "en": {
+                    "title": "TOM - IT Services",
+                    "home": {
+                        "h2": "Welcome to TOM - IT Services",
+                        "p": "We are an IT company specializing in innovative solutions for businesses and individuals."
+                    },
+                    "services": {
+                        "h2": "Services",
+                        "h3": ["Technical Support Services", "Software Development"],
+                        "p": ["Technical assistance for your company or individuals. Support in networks, systems, and more.",
+                              "We create tailored solutions for your needs, adapted to your business."]
+                    },
+                    "organigrama": "Company Chart",
+                    "contact": "Contact Us"
+                }
+            };
+
+            document.title = translations[lang].title;
+
+            document.querySelector(".home-text").textContent = translations[lang].home.h2;
+            document.querySelectorAll(".home-text")[1].textContent = translations[lang].home.p;
+
+            document.querySelector(".services-text").textContent = translations[lang].services.h2;
+            document.querySelectorAll(".services-text")[1].textContent = translations[lang].services.h3[0];
+            document.querySelectorAll(".services-text")[2].textContent = translations[lang].services.p[0];
+            document.querySelectorAll(".services-text")[3].textContent = translations[lang].services.h3[1];
+            document.querySelectorAll(".services-text")[4].textContent = translations[lang].services.p[1];
+
+            document.querySelector(".organigrama-text").textContent = translations[lang].organigrama;
+
+            document.querySelector(".contact-text").textContent = translations[lang].contact;
+        }
+    </script>
+</body>
 </html>
